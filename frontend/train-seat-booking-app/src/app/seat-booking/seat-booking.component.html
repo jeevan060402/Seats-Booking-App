@@ -1,0 +1,23 @@
+<div>
+    <h1>Train Seat Booking</h1>
+    <form #bookingForm="ngForm" (ngSubmit)="bookSeats()">
+      <div>
+        <label>Name:</label>
+        <input type="text" name="name" [(ngModel)]="formData.name" required />
+      </div>
+      <div>
+        <label>Age:</label>
+        <input type="number" name="age" [(ngModel)]="formData.age" required />
+      </div>
+      <!-- Add other input fields for pickup, destination, phone_number, email -->
+      <div>
+        <label>Number of Seats:</label>
+        <input type="number" name="numSeats" [(ngModel)]="formData.numSeats" required />
+      </div>
+      <button type="submit">Book Seats</button>
+    </form>
+    <div *ngIf="response">
+      <p>{{ response.message }}: {{ response.seats_booked.join(', ') }}</p>
+    </div>
+  </div>
+  
